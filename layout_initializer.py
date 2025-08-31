@@ -1,4 +1,3 @@
-# layout_initializer.py
 
 import json
 from connection_prompt import collect_distances
@@ -20,6 +19,16 @@ def parse_layout_size():
             print("Missing 'x'. Format must be like 3x3.")
 
 def save_to_json(data, filename="layout_data.json"):
+    # preserve existing inventory if present
+    try:
+        with open(filename, "r") as f:
+            existing = json.load(f)
+    except FileNotFoundError:
+        existing = {}
+
+    if isinstance(existing, dict) and "inventory" in existing:
+        data.setdefault("inventory", existing.get("inventory"))
+
     with open(filename, "w") as f:
         json.dump(data, f, indent=4)
     print(f"\nData saved to {filename}")
