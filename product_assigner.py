@@ -1,4 +1,4 @@
-# product_assigner.py
+
 
 def assign_products_to_racks(rack_ids):
     """

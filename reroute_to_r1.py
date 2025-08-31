@@ -51,26 +51,26 @@ def main():
 
     graph = build_graph(distance_map)
 
-    print("\n📍 REROUTE MODE: Enter your current rack (e.g., R6)")
+    print("\nREROUTE MODE: Enter your current rack (e.g., R6)")
     current_rack = input("Current rack: ").strip().upper()
 
     if current_rack not in rack_ids:
-        print(f"⚠️ Rack '{current_rack}' not found in layout.")
+        print(f"Rack '{current_rack}' not found in layout.")
         return
 
     path, total_distance = dijkstra(graph, current_rack, "R1")
 
     if path:
-        print("\n🛣️ Shortest path to R1:")
+        print("\nShortest path to R1:")
         print(" → ".join(path))
-        print(f"🧮 Total distance: {total_distance} units")
+        print(f"Total distance: {total_distance} units")
 
         # Optional: show tree format
         tree_edges = [f"({path[i]} → {path[i+1]})" for i in range(len(path)-1)]
-        tree_str = "✅ So the shortest-path tree = {" + ", ".join(tree_edges) + "}"
+        tree_str = "Path to Cashier  = {" + ", ".join(tree_edges) + "}"
         print(tree_str)
     else:
-        print("🚫 No path found to R1 from your current location.")
+        print("Invalid input.")
 
 if __name__ == "__main__":
     main()
