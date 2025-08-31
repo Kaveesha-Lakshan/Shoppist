@@ -226,6 +226,8 @@ def cart_action_menu():
 
 def customer_menu():
     while True:
+        # refresh products from disk 
+        products_heap.load_from_file("layout_data.json")
         print("\n--- Customer Menu ---")
         print("1.  Add product list")
         print("2.  View products")
@@ -233,7 +235,7 @@ def customer_menu():
         print("4.  Add to cart")
         print("5.  View cart")
         print("6.  Checkout")
-        print("7.  Find the cashier")   
+        print("7.  Find the cashier")
         print("0.  Exit")
 
         choice = input("Enter your choice: ").strip()
