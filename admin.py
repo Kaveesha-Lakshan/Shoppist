@@ -1,10 +1,10 @@
-from main import ProductHeap
+from shop_algorithms import ProductHeap
 
 products = ProductHeap()
 products.load_from_file()
 
 while True:
-    print("\n-Admin Menu-")
+    print("\n--- Admin Menu ---")
     print("1. Add product")
     print("2. Update product")
     print("3. Delete product")
@@ -12,7 +12,6 @@ while True:
     print("5. Exit")
 
     choice = input("Choose: ").strip()
-
     if choice == "1":
         name = input("Product name: ").strip()
         brand = input("Brand: ").strip()
@@ -24,7 +23,7 @@ while True:
             continue
         products.add_product(name, brand, price, qty)
         products.save_to_file()
-        print(f" Added {brand} {name} - Rs{price:.2f} (Qty: {qty})")
+        print(f" Added {brand} {name} - RS{price:.2f} (Qty: {qty})")
 
     elif choice == "2":
         name = input("Name to update: ").strip()
@@ -55,9 +54,7 @@ while True:
                 print(f"\n{pn.capitalize()}:")
                 for b, p, q in grouped[pn]:
                     print(f"  {b} - Rs{p:.2f} (Qty: {q})")
-
     elif choice == "5":
         break
     else:
         print("Invalid choice.")
-
