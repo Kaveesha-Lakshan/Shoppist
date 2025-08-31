@@ -20,35 +20,35 @@
         "R4->R3": 90.0
     },
     "products": {
-        "R1": "Milk",
+        "R1": "milk",
         "R2": "choc",
         "R3": "water",
         "R4": "apple"
     },
     "inventory": [
         [
-            0.0,
-            "apple",
-            "default",
-            0
-        ],
-        [
-            0.0,
-            "choc",
-            "default",
-            0
-        ],
-        [
-            0.0,
+            70.0,
             "water",
-            "default",
-            0
+            "Knuckles",
+            94
         ],
         [
-            0.0,
+            100.0,
+            "choc",
+            "de",
+            15
+        ],
+        [
+            1200.0,
             "milk",
-            "default",
-            0
+            "raththi",
+            8
+        ],
+        [
+            400.0,
+            "apple",
+            "keels",
+            4
         ]
     ]
 }
